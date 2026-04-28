@@ -1,6 +1,6 @@
 div[class^="col"] {
-    border: 4px solid black;
-    min-height: 275px;
+    border: 2px solid rgb(255, 255, 255);
+    min-height: 200px;
 }
 
 
@@ -24,11 +24,12 @@ p {
   height: fit-content;
   background-color: #000000;
   border-radius: 40px;
-  box-shadow: 0px 5px 10px #d862a3;
+  box-shadow: 0px 5px 10px #000000;
   justify-content: space-between;
   align-items: center;
   border: none;
   cursor: pointer;
+  margin: 0 auto;
 }
 .icon-Container {
   width: 45px;
@@ -67,3 +68,22 @@ p {
     margin-left: 10px;
   }
 }
+
+h1{
+   font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+h3{
+   font-family: "VT323", monospace;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+
+.container{
+  background-color: #ffdcec;
+}
+
