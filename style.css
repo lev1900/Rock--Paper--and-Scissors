@@ -1,8 +1,8 @@
 div[class^="col"] {
     border: 2px solid rgb(255, 255, 255);
     min-height: 200px;
+    border-radius: 5ch;
 }
-
 
 p {
   font-family: "Honk", system-ui;
@@ -85,5 +85,11 @@ h3{
 
 .container{
   background-color: #ffdcec;
+  border-radius: 5ch;
+  border-color: #53103f;
+  border: 4px solid rgb(255, 255, 255);
 }
 
+.main-container{
+  background-color: black;
+}
