@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="modal fade" id="instructionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="instructionsModalLabel" aria-hidden="false">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="instructionsModalLabel">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>How to Play: Click on "Let's Play!" and then select which item you think will beat the computer!</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
   <div class="main-container">
     <div class="container">
   <div class="row">
@@ -18,7 +34,7 @@
         <div class="row">
             <h1>YOU</h1>
         </div>
-        <img src="..." class="rounded mx-auto d-block" alt="...">
+        <img src="img\paper png.jpg" class="img-fluid" alt="...">
     </div>
     <div class="col">
         <p>VS</p>
@@ -27,7 +43,7 @@
       <div class="row">
         <h1>CODE</h1>
       </div>
-    <img src="..." class="rounded mx-auto d-block" alt="...">
+    <img src="img\rock png.avif" class="img-fluid" alt="...">
     </div>
   </div>
 
@@ -106,6 +122,7 @@
   </div>
   
 </div>
+
 </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
