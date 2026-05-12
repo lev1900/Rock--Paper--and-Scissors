@@ -97,7 +97,7 @@ animation: pulse 1.5s infinite alternate;
 }
 
 .main-container{
- background-color: black;
+ background-color: rgb(0, 0, 0);
 }
 
 .btn-close{
