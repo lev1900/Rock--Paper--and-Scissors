@@ -5,22 +5,57 @@
 
 
 let choices=["Rock","Paper","Scissors"];
-let codeChoice= choices[Math.floor(Math.random() * choices.length)];
-console.log(codeChoice);
+let computerChoice= choices[Math.floor(Math.random() * choices.length)];
+console.log(computerChoice);
 
+let playerChoice;
 
-function generateCodeChoice(){
-
-}
-generateCodeChoice();
-
-
-function whoIsTheWinner(){
-
+function playRound (playerChoice){
+console.log("Playing Round" + playerChoice);
 }
 
+let rockBtn = document.getElementById("rock-btn");
+rockBtn.addEventListener("Rock", playRound);
 
-function updateScoreboard(){
+let scissorsBtn = document.getElementById("scissors-btn");
+rockBtn.addEventListener("Scissors", playRound);
+
+let paperBtn = document.getElementById("paper-btn");
+rockBtn.addEventListener("Paper", playRound);
+
+
+function determineWinner(playerChoice,computerChoice){
+if (playerChoice===computerChoice){
+    return "Tie!";
+}
+if(playerChoice==="Rock"){
+    if(computerChoice="Paper"){
+        return "Code won!";
+    }else{
+        return "You Won!";
+    }
+}
+
+if(playerChoice==="Paper"){
+    if(computerChoice==="Scissors"){
+        return "Code Won!";
+    }else{
+        return "You Won!";
+    }
+}
+
+if(playerChoice==="Scissors"){
+    if(computerChoice==="Rock"){
+    return "Code Won!";
+    }else{
+        return "You Won!";
+    }
+}
+}
+determineWinner();
+
+
+function updateScoreboard(roundResult){
 
 }
 
@@ -28,4 +63,3 @@ function updateScoreboard(){
 function resetGame(){
 
 }
-
