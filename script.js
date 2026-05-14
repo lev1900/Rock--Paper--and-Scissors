@@ -55,11 +55,28 @@ if(playerChoice==="Scissors"){
 determineWinner();
 
 
-function updateScoreboard(roundResult){
+function updateScore(roundResult){
+if(playersScore > computerScore){
+    console.log("Player won");
+    document.getElementById("player-win").innerHTML;
+}else{
+    console.log("Computer Won");
+    document.getElementById("computer-won").innerHTML;
+}
+if(playerScore===computerScore){
+    console.log("tie");
+}
+}
+updateScore();
+
+
+function  updateDisplay(){
 
 }
+updateDisplay();
 
 
 function resetGame(){
 
 }
+resetGame();
