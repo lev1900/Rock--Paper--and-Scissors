@@ -1,82 +1,97 @@
- document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
             var instructionsModal = new bootstrap.Modal(document.getElementById('instructionsModal'));
             instructionsModal.show();
         });
 
 
-let choices=["Rock","Paper","Scissors"];
-let computerChoice= choices[Math.floor(Math.random() * choices.length)];
-console.log(computerChoice);
+let playerScore = 0;
+let computerScore = 0;
+let ties = 0; 
 
-let playerChoice;
+const choices = ["Rock", "Paper", "Scissors"];
 
-function playRound (playerChoice){
-console.log("Playing Round" + playerChoice);
+document.querySelector("#rock-btn").addEventListener("click", function () {
+    playRound("Rock");
+});
+
+document.querySelector("#paper-btn").addEventListener("click", function () {
+    playRound("Paper");
+});
+
+document.querySelector("#scissor-btn").addEventListener("click", function () {
+    playRound("Scissors");
+});
+
+document.querySelector("#reset").addEventListener("click", resetGame);
+
+
+function playRound(playerChoice) {
+    console.log("Playing Round " + playerChoice);
+    const computerChoice = getComputerChoice();
+    const result = determineWinner(playerChoice, computerChoice);
+
+    updateScore(result);
+    displayResult(playerChoice, computerChoice, result);
 }
 
-let rockBtn = document.getElementById("rock-btn");
-rockBtn.addEventListener("Rock", playRound);
-
-let scissorsBtn = document.getElementById("scissors-btn");
-rockBtn.addEventListener("Scissors", playRound);
-
-let paperBtn = document.getElementById("paper-btn");
-rockBtn.addEventListener("Paper", playRound);
-
-
-function determineWinner(playerChoice,computerChoice){
-if (playerChoice===computerChoice){
-    return "Tie!";
+function getComputerChoice() {
+    const index = Math.floor(Math.random() * choices.length);
+    return choices[index];
 }
-if(playerChoice==="Rock"){
-    if(computerChoice="Paper"){
-        return "Code won!";
-    }else{
-        return "You Won!";
+
+function determineWinner(player, computer) {
+
+    if (player === computer) {
+        return "tie";
     }
-}
 
-if(playerChoice==="Paper"){
-    if(computerChoice==="Scissors"){
-        return "Code Won!";
-    }else{
-        return "You Won!";
+    if (
+        (player === "Rock" && computer === "Scissors") ||
+        (player === "Paper" && computer === "Rock") ||
+        (player === "Scissors" && computer === "Paper")
+    ) {
+        return "player";
     }
+
+    return "computer";
 }
 
-if(playerChoice==="Scissors"){
-    if(computerChoice==="Rock"){
-    return "Code Won!";
-    }else{
-        return "You Won!";
+function updateScore(result) {
+    if (result === "player") {
+        playerScore++;
+    } else if (result === "computer") {
+        computerScore++;
+    } else {
+        ties++;
     }
+   
 }
+
+function displayResult(playerChoice, computerChoice, result) {
+    let resultText = "";    
+    if (result === "player") {
+        resultText = "You win!";
+    }
+    else if (result === "computer") {
+        resultText = "Computer wins!";
+    }
+    else {
+        resultText = "It's a tie!";
+    }
+        document.querySelector("#outcome").textContent = playerChoice + " vs " + computerChoice;
+        document.querySelector("#result").textContent = resultText;
+        document.querySelector("#player-score").textContent = playerScore;
+        document.querySelector("#computer-score").textContent = computerScore;
 }
-determineWinner();
 
 
-function updateScore(roundResult){
-if(playersScore > computerScore){
-    console.log("Player won");
-    document.getElementById("player-win").innerHTML;
-}else{
-    console.log("Computer Won");
-    document.getElementById("computer-won").innerHTML;
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    ties = 0;
+   
+    document.querySelector("#player-score").textContent = playerScore;
+    document.querySelector("#computer-score").textContent = computerScore;
+    document.querySelector("#outcome").textContent = "";
+    document.querySelector("#result").textContent = "";
 }
-if(playerScore===computerScore){
-    console.log("tie");
-}
-}
-updateScore();
-
-
-function  updateDisplay(){
-
-}
-updateDisplay();
-
-
-function resetGame(){
-
-}
-resetGame();
